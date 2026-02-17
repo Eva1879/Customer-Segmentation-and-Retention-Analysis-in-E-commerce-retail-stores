@@ -1,7 +1,4 @@
 # Customer-Segmentation-and-Retention-Analysis-in-E-commerce-retail-stores
-Using a retail transactional dataset, the following will be implemented: 
-Customer Segmentation using Clustering (Unsupervised) 
-Customer Value estimation (Lifetime Value – CLV) 
-Churn labeling (Behavior-based) 
-Churn prediction using KNN (Supervised) 
-Actionable business insights
+## Problem Statement
+The objective of this project is to analyze online retail transaction data to understand customer purchasing behavior, segment customers into meaningful groups, estimate customer lifetime value, and predict customer churn to support data-driven retention strategies.
+
