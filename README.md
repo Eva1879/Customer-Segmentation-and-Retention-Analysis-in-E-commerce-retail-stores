@@ -16,8 +16,8 @@ link: https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset
 Steps applied to build the model:
 1. Getting a reliable online transactional data with sufficent samples
 2. Cleaning the data, in order to mimic customer buyings, i.e. to remove cancelled purchases, empty rows(null), incomplete transactions, Price ranges < 0 or any negative values.
-3. Apply feature Engineering techniques, select best features and transform them to Recency, Frequency and Monetary columns, and segregate the 4k rows based on this, this is for churn evaluation and prediction, based after 3 months and 6 months respectively.
-4. We segregate the customers based on clusters and indexes [0, 1, 2, 3] based on their selected features
+3. Apply feature Engineering techniques, select best features and transform them to Recency, Frequency and Monetary columns, and segregate the 4k rows based on this, this is for churn evaluation and prediction, based after 3 months (using actual dates of transaction) and 6 months (recency feature) respectively.
+4. At random the customers are segregated based on K means clustering and indexed [0, 1, 2, 3] based on their selected features.
 5. We create separate labels for churn rates, based on transactional data, and the model predicts based on 90 day and 180 days timeframe(recency).
 6. Train the data using K-Nearest Neighbor (k=5), after splitting test, train and normalizing the data to scale the values of the features.
 7. Evaluating the results
