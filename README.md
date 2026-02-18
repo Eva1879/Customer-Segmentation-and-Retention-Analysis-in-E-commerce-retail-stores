@@ -44,7 +44,7 @@ Lower inertia = tighter, more similar clusters
   - Personal thank-you notes
 
 ### Cluster 1: "Churned/Lost" (At-Risk or Already Gone)
-- **Size**: 825 customers (ALL churned customers)
+- **Size**: 825 customers (ALL churned customers) out of 1k customers
 - **Recency**: Last purchase 265+ days ago (8.8 months)
 - **Frequency**: Only 1-2 purchases (mostly one-time buyers)
 - **Spending**: Low (£614 average)
