@@ -151,6 +151,5 @@ Recall:
 - **19% of customers** (Cluster 1) have already churned
 - **61% of customers** (Clusters 2 & 3) are active but need nurturing
 
-Protect VIPs (Clusters 2-3) with personal outreach and loyalty programs. Upsell regulars (Cluster 0) through bundles and referrals. Analyze churned customers (Cluster 1) to understand why they left, and reactivate 223 at-risk customers with "we miss you" offers before they churn.
 
 
