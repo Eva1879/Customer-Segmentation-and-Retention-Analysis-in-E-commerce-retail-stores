@@ -10,17 +10,32 @@ This Online Retail II data set contains all the transactions occurring for a UK-
 link: https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset
 - **Time Period taken**: December 2009 - December 2010
 - **Total Customers**: 4,312 (each row, each customer)
-- **Total Transactions**: [Your transaction count] 
+- **Total Transactions**: [Your transaction count]
+- Results:
 - **Active Customers**: 3,487 (80.9%!)
 - **Churned Customers**: 825 (19.1% of total data)
+
+What is the Elbow Method?
+The Elbow Method is a technique used to find the optimal number of clusters for K-Means clustering. It helps you answer the question: "How many groups should I split my customers into?"
+We used the Elbow Method to find the Optimal K value, to group the clusters, a balance of 4 means all the clusters could be grouped similarly without farther away features
+
+How It Works:
+The Concept:
+K-Means tries to make clusters where customers are similar inside each cluster and different from other clusters
+
+It measures this with inertia (how spread out customers are within clusters)
+
+Lower inertia = tighter, more similar clusters
+
+
 
 ## 🔍 Customer Segmentation Analysis (4 Clusters)
 
 ### Cluster 0: "VIP Champions" (Loyal High-Value)
-- **Size**: ___ customers
-- **Recency**: Purchased within last ___ days
-- **Frequency**: ___ purchases on average
-- **Spending**: £___ average per customer
+- **Size**: _3207__ customers
+- **Recency**: Purchased within last _43__ days
+- **Frequency**: _5_ purchases on average
+- **Spending**: £_1743__ average per customer
 - **Churn Rate**: Very low
 - **Business Strategy**: 
   - Reward loyalty with exclusive perks
@@ -33,26 +48,25 @@ link: https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset
 - **Recency**: Last purchase 265+ days ago (8.8 months)
 - **Frequency**: Only 1-2 purchases (mostly one-time buyers)
 - **Spending**: Low (£614 average)
-- **Churn Rate**: 99.9%
+- **Churn Rate**: 99.9% (Most certain)
 - **Business Strategy**:
   - **Too late to save** - these customers are already gone
-  - Focus on understanding WHY they left
+  - Focus on understanding WHY they left/ improve operations
   - Use insights to prevent future churn
 
 ### Cluster 2: "Promising Newcomers" (Recent, Low Spend)
-- **Size**: ___ customers
-- **Recency**: Purchased recently (within ___ days)
-- **Frequency": 1-2 purchases (new customers)
+- **Size**: _5__ customers
+- **Recency**: Purchased recently (within _6__ days)
+- **Frequency": 116 purchases (new customers)
 - **Spending**: Low to medium
 - **Churn Rate**: Low (just arrived!)
 - **Business Strategy**:
   - Send welcome offers
   - Encourage second purchase
   - Build relationship early
-  - Email newsletters with tips
 
 ### Cluster 3: "Steady Regulars" (Consistent, Medium Value)
-- **Size**: ___ customers (only 1 churned customer!)
+- **Size**: __53_ customers (only 1 churned customer!)
 - **Recency**: Purchased within last ___ days
 - **Frequency**: Regular purchasers
 - **Spending": Medium to high
@@ -119,7 +133,9 @@ link: https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset
 ## 🔮 Churn Prediction Model Results
 
 Accuracy:
+
 Precision:
+
 Recall:
 
 ### Top Factors Predicting Churn:
@@ -134,3 +150,7 @@ Recall:
 - **20% of customers** (Cluster 0) drive 80% of revenue
 - **19% of customers** (Cluster 1) have already churned
 - **61% of customers** (Clusters 2 & 3) are active but need nurturing
+
+Protect VIPs (Clusters 2-3) with personal outreach and loyalty programs. Upsell regulars (Cluster 0) through bundles and referrals. Analyze churned customers (Cluster 1) to understand why they left, and reactivate 223 at-risk customers with "we miss you" offers before they churn.
+
+
