@@ -3,7 +3,7 @@
 The objective of this project is to analyze online retail transaction data to understand customer purchasing behavior, segment customers into meaningful groups, estimate customer lifetime value, and predict customer churn to support data-driven retention strategies.
 
 
-# Customer Segmentation & Churn Analysis for the year (2009-2010)
+## Intepreting data to identify trends and patterns and applying K-Nearest Neighbor Algorithm to predict the churn rates for an E-commerce retail store
 
 # Dataset Overview
 This Online Retail II data set contains all the transactions occurring for a UK-based and registered, non-store online retail between 01/12/2009 and 09/12/2011.The company mainly sells unique all-occasion gift-ware. Many customers of the company are wholesalers.
@@ -11,18 +11,14 @@ link: https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset
 - **Time Period taken**: December 2009 - December 2010
 - **Total Customers**: 4,312 (each row, each customer)
 
-What is the Elbow Method?
-The Elbow Method is a technique used to find the optimal number of clusters for K-Means clustering. It helps you answer the question: "How many groups should I split my customers into?"
-We used the Elbow Method to find the Optimal K value, to group the clusters, a balance of 4 means all the clusters could be grouped similarly without farther away features
 
-How It Works:
-The Concept:
-K-Means tries to make clusters where customers are similar inside each cluster and different from other clusters
-
-It measures this with inertia (how spread out customers are within clusters)
-
-Lower inertia = tighter, more similar clusters
-
+Steps applied to build the model:
+1. Getting a reliable online transactional data with sufficent samples
+2. Cleaning the data, in order to mimic customer buyings, i.e. to remove cancelled purchases, empty rows(null), incomplete transactions, Price ranges < 0 or any negative values.
+3. Apply feature Engineering techniques, select best features and transform them to Recency, Frequency and Monetary columns, and segragate the 4k rows based on this, this is for churn evaluation and prediction, based after 3 months and 6 months respectively.
+4. We segregate the customers based on clusters and indexes [0, 1, 2, 3] based on their selected features
+5. Train the data using K-Nearest Neighbor (k=5), after splitting test, train and normalizing the data to scale the values of the features.
+6. Evaluating the results
 
 
 ## 🔍 Customer Segmentation Analysis (4 Clusters)
@@ -141,14 +137,8 @@ This seems to be overfitting, and the model seem to generalize Recency more! wit
 Accuracy: 94.8%
 
 Model missed 35 churned customers to think they would stay.
-But, much better model for future churn prediction, with less false positives too.
+But, a better realistic model for future churn prediction, with 6 false positives too.
 
-### Top Factors Predicting Churn:
-1. **Recency** - Days since last purchase (most important)
-2. **Frequency** - Total number of purchases
-3. **Monetary Value** - Total spend
-4. **Cluster assignment**
-5. **CLV**
 
 ## ✅ Summary: The 80/20 Rule
 
@@ -156,5 +146,18 @@ But, much better model for future churn prediction, with less false positives to
 - **19% of customers** (Cluster 1) have already churned
 - **61% of customers** (Clusters 2 & 3) are active but need nurturing
 
+Conceptual Notes:
+To determine, the clustering values, we used the Elbow Method:
+What is the Elbow Method?
+The Elbow Method is a technique used to find the optimal number of clusters for K-Means clustering. It helps you answer the question: "How many groups should I split my customers into?"
+We used the Elbow Method to find the Optimal K value, to group the clusters, a balance of 4 means all the clusters could be grouped similarly without farther away features
+
+How It Works:
+The Concept:
+K-Means tries to make clusters where customers are similar inside each cluster and different from other clusters
+
+It measures this with inertia (how spread out customers are within clusters)
+
+Lower inertia = tighter, more similar clusters
 
 
