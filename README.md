@@ -1,4 +1,136 @@
-# customer-segmentation-churn-retail
+
 ## Problem Statement
 The objective of this project is to analyze online retail transaction data to understand customer purchasing behavior, segment customers into meaningful groups, estimate customer lifetime value, and predict customer churn to support data-driven retention strategies.
 
+
+# Customer Segmentation & Churn Analysis for the year (2009-2010)
+
+# Dataset Overview
+This Online Retail II data set contains all the transactions occurring for a UK-based and registered, non-store online retail between 01/12/2009 and 09/12/2011.The company mainly sells unique all-occasion gift-ware. Many customers of the company are wholesalers.
+link: https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset
+- **Time Period taken**: December 2009 - December 2010
+- **Total Customers**: 4,312 (each row, each customer)
+- **Total Transactions**: [Your transaction count] 
+- **Active Customers**: 3,487 (80.9%!)
+- **Churned Customers**: 825 (19.1% of total data)
+
+## 🔍 Customer Segmentation Analysis (4 Clusters)
+
+### Cluster 0: "VIP Champions" (Loyal High-Value)
+- **Size**: ___ customers
+- **Recency**: Purchased within last ___ days
+- **Frequency**: ___ purchases on average
+- **Spending**: £___ average per customer
+- **Churn Rate**: Very low
+- **Business Strategy**: 
+  - Reward loyalty with exclusive perks
+  - Give early access to new products
+  - Ask for reviews and referrals
+  - Personal thank-you notes
+
+### Cluster 1: "Churned/Lost" (At-Risk or Already Gone)
+- **Size**: 825 customers (ALL churned customers)
+- **Recency**: Last purchase 265+ days ago (8.8 months)
+- **Frequency**: Only 1-2 purchases (mostly one-time buyers)
+- **Spending**: Low (£614 average)
+- **Churn Rate**: 99.9%
+- **Business Strategy**:
+  - **Too late to save** - these customers are already gone
+  - Focus on understanding WHY they left
+  - Use insights to prevent future churn
+
+### Cluster 2: "Promising Newcomers" (Recent, Low Spend)
+- **Size**: ___ customers
+- **Recency**: Purchased recently (within ___ days)
+- **Frequency": 1-2 purchases (new customers)
+- **Spending**: Low to medium
+- **Churn Rate**: Low (just arrived!)
+- **Business Strategy**:
+  - Send welcome offers
+  - Encourage second purchase
+  - Build relationship early
+  - Email newsletters with tips
+
+### Cluster 3: "Steady Regulars" (Consistent, Medium Value)
+- **Size**: ___ customers (only 1 churned customer!)
+- **Recency**: Purchased within last ___ days
+- **Frequency**: Regular purchasers
+- **Spending": Medium to high
+- **Churn Rate**: Almost zero
+- **Business Strategy**:
+  - Maintain relationship
+  - Upsell relevant products
+  - Birthday/anniversary discounts
+  - Loyalty program middle tier
+
+## 💰 Customer Lifetime Value (CLV) Insights
+
+| Segment | Average CLV | Business Impact |
+|---------|-------------|-----------------|
+| **Active Customers** | £69,828 | Core revenue drivers |
+| **Churned Customers** | £2,326 | Lost revenue potential |
+
+**Key Insight**: Active customers are worth **30x more** than churned customers!
+
+## ⏰ Recency Patterns
+
+- **Active customers**: Last shopped 1-6 months ago
+- **Churned customers**: Last shopped 6-12+ months ago
+- **Warning sign**: If a customer hasn't purchased in 3 months, they're at risk
+
+## 📈 Frequency Patterns
+
+- **One-time buyers**: 1 purchase only
+  - These make up most churned customers
+  - Critical to convert them to second purchase
+  
+- **Repeat buyers**: 3+ purchases
+  - Much lower churn rate
+  - These are your loyal customers
+
+## 💵 Monetary Patterns
+
+- **Low spenders** (< £500): Higher churn risk
+- **Medium spenders** (£500-£2,000): Moderate churn risk
+- **High spenders** (> £2,000): Very low churn risk
+
+## 🎯 Actionable Business Recommendations
+
+### Who should get retention offers?
+- **Customers in Cluster 0 and 2** who haven't purchased in 60-90 days
+- One-time buyers from the last 3 months
+- Previously high spenders showing declining activity
+
+### Who should get early access to new features?
+- **Cluster 0 (VIP Champions)** - they're your brand advocates
+- Customers with high CLV (> £10,000)
+- Frequent purchasers (10+ orders)
+
+### Who is likely to churn no matter what?
+- **Cluster 1 customers** (already churned - 99.9% gone)
+- One-time buyers from 6+ months ago
+- Customers with extremely low spend (< £100 total)
+
+### Who should we focus on saving?
+1. **Priority 1**: Cluster 2 customers showing signs of disengagement
+2. **Priority 2**: One-time buyers from last 3 months
+3. **Priority 3**: Previously high-value customers with recent drop in activity
+
+## 🔮 Churn Prediction Model Results
+
+Accuracy:
+Precision:
+Recall:
+
+### Top Factors Predicting Churn:
+1. **Recency** - Days since last purchase (most important)
+2. **Frequency** - Total number of purchases
+3. **Monetary Value** - Total spend
+4. **Cluster assignment**
+5. **CLV**
+
+## ✅ Summary: The 80/20 Rule
+
+- **20% of customers** (Cluster 0) drive 80% of revenue
+- **19% of customers** (Cluster 1) have already churned
+- **61% of customers** (Clusters 2 & 3) are active but need nurturing
