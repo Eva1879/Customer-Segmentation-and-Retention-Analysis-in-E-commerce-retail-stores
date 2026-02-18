@@ -1,9 +1,9 @@
 
-## Problem Statement
-The objective of this project is to analyze online retail transaction data to understand customer purchasing behavior, segment customers into meaningful groups, estimate customer lifetime value, and predict customer churn to support data-driven retention strategies.
-
-
 ## Intepreting data to identify trends and patterns and applying K-Nearest Neighbor Algorithm to predict the churn rates for an E-commerce retail store
+
+# Problem Statement
+Many online platform use machine learning techniques to learn the customer's behaviour and patterns to recommend what they want to see more of! And so, even E-commerce retail stores, need customer segregation and gain insights on their pattern of buying and customers who are likely to leave, thus to keep them engaged. Thus, as a beginner, i want to learn on the churn rates, segregations on a real-world dataset using machine learning through data.
+The objective of this project is to analyze online retail transaction data to understand customer purchasing behavior, segment customers into meaningful groups, estimate customer lifetime value, and predict customer churn to support data-driven retention strategies.
 
 # Dataset Overview
 This Online Retail II data set contains all the transactions occurring for a UK-based and registered, non-store online retail between 01/12/2009 and 09/12/2011.The company mainly sells unique all-occasion gift-ware. Many customers of the company are wholesalers.
@@ -15,7 +15,7 @@ link: https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset
 Steps applied to build the model:
 1. Getting a reliable online transactional data with sufficent samples
 2. Cleaning the data, in order to mimic customer buyings, i.e. to remove cancelled purchases, empty rows(null), incomplete transactions, Price ranges < 0 or any negative values.
-3. Apply feature Engineering techniques, select best features and transform them to Recency, Frequency and Monetary columns, and segragate the 4k rows based on this, this is for churn evaluation and prediction, based after 3 months and 6 months respectively.
+3. Apply feature Engineering techniques, select best features and transform them to Recency, Frequency and Monetary columns, and segregate the 4k rows based on this, this is for churn evaluation and prediction, based after 3 months and 6 months respectively.
 4. We segregate the customers based on clusters and indexes [0, 1, 2, 3] based on their selected features
 5. Train the data using K-Nearest Neighbor (k=5), after splitting test, train and normalizing the data to scale the values of the features.
 6. Evaluating the results
