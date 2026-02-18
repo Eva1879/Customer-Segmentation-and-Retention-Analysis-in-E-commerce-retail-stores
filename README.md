@@ -130,13 +130,22 @@ Lower inertia = tighter, more similar clusters
 2. **Priority 2**: One-time buyers from last 3 months
 3. **Priority 3**: Previously high-value customers with recent drop in activity
 
-## 🔮 Churn Prediction Model Results
+## 🔮 Churn Prediction Model Results (180 days of churned values)
 
-Accuracy:
+Accuracy: 99.81%
 
-Precision:
+Precision: 99.51 %
 
-Recall:
+Recall: 99.51 %
+
+This seems to be overfitting, and the model seem to generalize Recency more! with only two mistakes
+
+## 🔮 Churn Prediction Model Results (90 days of churned values)
+
+Accuracy: 94.8%
+
+Model missed 35 churned customers to think they would stay.
+But, much better model for future churn prediction, with less false positives too.
 
 ### Top Factors Predicting Churn:
 1. **Recency** - Days since last purchase (most important)
