@@ -10,10 +10,6 @@ This Online Retail II data set contains all the transactions occurring for a UK-
 link: https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset
 - **Time Period taken**: December 2009 - December 2010
 - **Total Customers**: 4,312 (each row, each customer)
-- **Total Transactions**: [Your transaction count]
-- Results:
-- **Active Customers**: 3,487 (80.9%!)
-- **Churned Customers**: 825 (19.1% of total data)
 
 What is the Elbow Method?
 The Elbow Method is a technique used to find the optimal number of clusters for K-Means clustering. It helps you answer the question: "How many groups should I split my customers into?"
