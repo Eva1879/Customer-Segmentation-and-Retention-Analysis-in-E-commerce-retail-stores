@@ -2,7 +2,7 @@
 ## Intepreting data to identify trends and patterns and applying K-Nearest Neighbor Algorithm to learn on churn rates, recommend solutions and business strategies for an E-commerce retail store
 
 # Problem Statement
-Many online platform use machine learning techniques to learn the customer's behaviour and patterns to recommend what they want to see more of! And so, even E-commerce retail stores, could benefit from learning on different types of customers, to gain insights on their pattern of buying, high spenders, frequency of buying and customers who are likely to leave, in order to keep them engaged. Thus, as a beginner, i want to learn on using a real world data, to pre-process the data, apply machine learning algorithms through data.
+Many online platforms use machine learning techniques to learn their customer's behaviours and patterns to recommend what they want to see more of! And so, even E-commerce retail stores, could benefit from this by learning different types of customers, and gain insights on their pattern of buying, spending, frequency of buying and customers who are likely to leave, in order to keep them engaged. Thus, as a beginner, i used a real world data, to pre-process the data and apply machine learning algorithms through data.
 
 The objective of this project is to analyze online retail transaction data to understand customer purchasing behavior, segment customers into meaningful groups, estimate customer lifetime value, and predict customer churn to support data-driven retention strategies.
 
