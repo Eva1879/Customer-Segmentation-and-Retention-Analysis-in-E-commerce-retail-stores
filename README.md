@@ -75,21 +75,25 @@ Steps applied to build the model:
 
 ## 💰 Customer Lifetime Value (CLV) Insights: How many active customers and churned ones to drive revenue 
 
-Cluster 2 (Whales)	£22.8M, 0.1%	~60%
-Cluster 3 (High-Value)	£1.55M,	1.2%	~30%
-Cluster 0 (Mid-Tier)	£14.8K,	74.4%	~9%
-Cluster 1 (Churned)	£1.6K,	24.3%	~1%
+| Segment | Average CLV | % of Customers | % of Total Value |
+|---------|-------------|----------------|-------------------|
+| **Cluster 2 (Whales)** | £22.8M | 0.1% | ~60% |
+| **Cluster 3 (High-Value)** | £1.55M | 1.2% | ~30% |
+| **Cluster 0 (Mid-Tier)** | £14.8K | 74.4% | ~9% |
+| **Cluster 1 (Churned)** | £1.6K | 24.3% | ~1% |
 
-**Key Insight**: Active customers are worth **30x more** than churned customers!
+**Key Insight:** Active customers are worth **30x more** than churned customers!
 
-## ⏰ Recency Patterns
+---
 
+## ⏰ Recency Patterns by Cluster
 
-Cluster	             Re-engage at	      Win-back at   	Give up at
-Cluster 2 (Whales)	   30 days	          60 days	        90 days
-Cluster 3 (High-Value) 60 days	          90 days	        120 days
-Cluster 0 (Mid-Tier)	 90 days	          120 days	      180 days
-Cluster 1 (Churned)   	N/A	              N/A	           Already gone
+| Cluster | Re-engage at | Win-back at | Give up at |
+|---------|--------------|-------------|------------|
+| **Cluster 2 (Whales)** | 30 days | 60 days | 90 days |
+| **Cluster 3 (High-Value)** | 60 days | 90 days | 120 days |
+| **Cluster 0 (Mid-Tier)** | 90 days | 120 days | 180 days |
+| **Cluster 1 (Churned)** | N/A | N/A | Already gone |
 
   
 ## 📈 Frequency Patterns
