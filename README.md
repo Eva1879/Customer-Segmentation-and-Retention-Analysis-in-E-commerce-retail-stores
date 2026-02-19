@@ -18,74 +18,80 @@ Steps applied to build the model:
 2. Cleaning the data, in order to mimic customer buyings, i.e. to remove cancelled purchases, empty rows(null), incomplete transactions, Price ranges < 0 or any negative values.
 3. Apply feature Engineering techniques, select best features and transform them to Recency, Frequency and Monetary columns, and segregate the 4k rows based on this, this is for churn evaluation and prediction, based after 3 months (using actual dates of transaction) and 6 months (recency feature) respectively.
 4. At random the customers are segregated based on K means clustering and indexed [0, 1, 2, 3] based on their selected features.
-5. We create separate labels for churn rates, based on transactional data, and the model predicts based on 90 day and 180 days timeframe(recency).
+5. We create separate labels for churn rates, based on transactional data, and the model predicts churn (0/1) on 90 day and 180 days timeframe(recency).
 6. Train the data using K-Nearest Neighbor (k=5), after splitting test, train and normalizing the data to scale the values of the features.
 7. Evaluating the results
 
 
 ## 🔍 Customer Segmentation Analysis (4 Clusters)
 
-### Cluster 0: "VIP Champions" (Loyal High-Value)
+### Cluster 0: Mid-tier Regulars
 - **Size**: _3207__ customers
 - **Recency**: Purchased within last _43__ days
 - **Frequency**: _5_ purchases on average
 - **Spending**: £_1743__ average per customer
-- **Churn Rate**: Very low
+- **Churn Rate**: low
+- Lifetime Value: £14,842 average
 - **Business Strategy**: 
-  - Reward loyalty with exclusive perks
-  - Give early access to new products
-  - Ask for reviews and referrals
-  - Personal thank-you notes
+ Product bundles to encourage more frequent purchases
+ Reminder campaigns at 30-40 days since last purchase
 
 ### Cluster 1: "Churned/Lost" (At-Risk or Already Gone)
-- **Size**: 825 customers (ALL churned customers) out of 1k customers
+- **Size**: 825 customers (mostly churned customers) 
 - **Recency**: Last purchase 265+ days ago (8.8 months)
 - **Frequency**: Only 1-2 purchases (mostly one-time buyers)
-- **Spending**: Low (£614 average)
-- **Churn Rate**: 99.9% (Most certain)
+- **Spending**: £597 average
+- Lifetime Value: £1,587 average
+- Churn Rate: 78.7% (most are gone)
 - **Business Strategy**:
   - **Too late to save** - these customers are already gone
   - Focus on understanding WHY they left/ improve operations
   - Use insights to prevent future churn
 
-### Cluster 2: "Promising Newcomers" (Recent, Low Spend)
+    Of the 825 churned customers total, 824 came from this cluster...
+
+### Cluster 2: "Power Shoppers" (Long-term customers: Corporate Accounts maybe)
 - **Size**: _5__ customers
 - **Recency**: Purchased recently (within _6__ days)
-- **Frequency": 116 purchases (new customers)
-- **Spending**: Low to medium
-- **Churn Rate**: Low (just arrived!)
+- **Frequency": 114 purchases (avg purchases in the cluster)
+- **Spending**: £215,544 average
+- **Churn Rate**: 0% 
+ - Life time value- £22.8 MILLION average
 - **Business Strategy**:
-  - Send welcome offers
-  - Encourage second purchase
-  - Build relationship early
+ Personal relationship management - assign dedicated account managers
+ VIP treatment - exclusive events, early access
+ Monitor closely - if one of these churns, it's a major revenue loss
 
-### Cluster 3: "Steady Regulars" (Consistent, Medium Value)
+### Cluster 3: "Steady Regulars" (Consistent, High Value)
 - **Size**: __53_ customers (only 1 churned customer!)
-- **Recency**: Purchased within last ___ days
-- **Frequency**: Regular purchasers
-- **Spending": Medium to high
-- **Churn Rate**: Almost zero
+- **Recency**: Purchased within last _15__ days
+- **Frequency**: ~49 purchasers
+- Spend per purchase: £29,040 average
+- Lifetime Value: £1.55 MILLION average
+- **Churn Rate**: 1%
 - **Business Strategy**:
-  - Maintain relationship
+  - Top-tier benefits
   - Upsell relevant products
-  - Birthday/anniversary discounts
-  - Loyalty program middle tier
 
-## 💰 Customer Lifetime Value (CLV) Insights
+## 💰 Customer Lifetime Value (CLV) Insights: How many active customers and churned ones to drive revenue 
 
-| Segment | Average CLV | Business Impact |
-|---------|-------------|-----------------|
-| **Active Customers** | £69,828 | Core revenue drivers |
-| **Churned Customers** | £2,326 | Lost revenue potential |
+Cluster 2 (Whales)	£22.8M, 0.1%	~60%
+Cluster 3 (High-Value)	£1.55M,	1.2%	~30%
+Cluster 0 (Mid-Tier)	£14.8K,	74.4%	~9%
+Cluster 1 (Churned)	£1.6K,	24.3%	~1%
 
 **Key Insight**: Active customers are worth **30x more** than churned customers!
 
 ## ⏰ Recency Patterns
 
-- **Active customers**: Last shopped 1-6 months ago
-- **Churned customers**: Last shopped 6-12+ months ago
-- **Warning sign**: If a customer hasn't purchased in 3 months, they're at risk
 
+Cluster	             Re-engage at	      Win-back at   	Give up at
+Cluster 2 (Whales)	   30 days	          60 days	        90 days
+Cluster 3 (High-Value) 60 days	          90 days	        120 days
+Cluster 0 (Mid-Tier)	 90 days	          120 days	      180 days
+Cluster 1 (Churned)   	N/A	              N/A	           Already gone
+
+  
 ## 📈 Frequency Patterns
 
 - **One-time buyers**: 1 purchase only
@@ -105,14 +111,15 @@ Steps applied to build the model:
 ## 🎯 Actionable Business Recommendations
 
 ### Who should get retention offers?
-- **Customers in Cluster 0 and 2** who haven't purchased in 60-90 days
-- One-time buyers from the last 3 months
-- Previously high spenders showing declining activity
+Customers in Cluster 0 who haven't purchased in 90 days (mid-tier threshold)
+Customers in Cluster 3 who haven't purchased in 60 days (high-value threshold)
+Customers in Cluster 2 who haven't purchased in 30 days
+One-time buyers from the last 3 months
+Previously high spenders showing declining activity
 
 ### Who should get early access to new features?
-- **Cluster 0 (VIP Champions)** - they're your brand advocates
-- Customers with high CLV (> £10,000)
-- Frequent purchasers (10+ orders)
+Cluster 2 - £22.8M lifetime value
+Cluster 3 (High-Value Regulars) - £1.55M lifetime value
 
 ### Who is likely to churn no matter what?
 - **Cluster 1 customers** (already churned - 99.9% gone)
@@ -120,11 +127,9 @@ Steps applied to build the model:
 - Customers with extremely low spend (< £100 total)
 
 ### Who should we focus on saving?
-1. **Priority 1**: Cluster 2 customers showing signs of disengagement
-2. **Priority 2**: One-time buyers from last 3 months
-3. **Priority 3**: Previously high-value customers with recent drop in activity
+Cluster 2 likely
 
-## 🔮 Churn Prediction Model Results (180 days of churned values)
+## 🔮 Churn Prediction Model Results (identifying already churned customers in 180 days)
 
 Accuracy: 99.81%
 
@@ -134,7 +139,7 @@ Recall: 99.51 %
 
 This seems to be overfitting, and the model seem to generalize Recency more! with only two mistakes
 
-## 🔮 Churn Prediction Model Results (90 days of churned values)
+## 🔮 Churn Prediction Model Results (who will churn in the next 90 days)
 
 Accuracy: 94.8%
 
@@ -142,11 +147,16 @@ Model missed 35 churned customers to think they would stay.
 But, a better realistic model for future churn prediction, with 6 false positives too.
 
 
-## ✅ Summary: The 80/20 Rule
+## ✅ Summary:
 
-- **20% of customers** (Cluster 0) drive 80% of revenue
-- **19% of customers** (Cluster 1) have already churned
-- **61% of customers** (Clusters 2 & 3) are active but need nurturing
+Cluster 0: 3,207 customers (78% of total)
+Cluster 1: 825 customers (20% of total)
+Clusters 2+3: 58 customers (2% of total)
+
+So:
+
+Cluster 0 is 78%, 
+Clusters 2+3 are 2%,
 
 Conceptual Notes:
 To determine, the clustering values, we used the Elbow Method:
